@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:transitway/v2/components/modals/extended_ticket_modal.dart';
+import '../components/modals/extended_ticket_modal.dart';
 
 import '../models/ticket.dart';
 

@@ -27,7 +27,6 @@ setNavMode(
   mapController.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
     target: latlng,
     bearing: bearing,
-    tilt: 60,
-    zoom: 20,
+    zoom: 18,
   )));
 }

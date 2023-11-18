@@ -76,7 +76,7 @@ class _OTPPageState extends State<OTPPage> {
                       Text(
                         auth.phoneNumber,
                         style: const TextStyle(
-                            color: transitwayPurple,
+                            color: blitzPurple,
                             fontSize: 17,
                             fontFamily: 'UberMoveMedium'),
                       ),

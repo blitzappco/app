@@ -93,7 +93,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   height: 100,
                 )
               : const CircularProgressIndicator(
-                  color: transitwayPurple,
+                  color: blitzPurple,
                 ),
         ),
       ),

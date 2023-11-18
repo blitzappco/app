@@ -19,8 +19,8 @@ class Loading extends StatelessWidget {
             topRight: Radius.circular(9),
           ),
         ),
-        child: const Center(
-            child: CircularProgressIndicator(color: transitwayPurple)),
+        child:
+            const Center(child: CircularProgressIndicator(color: blitzPurple)),
       ),
     );
   }

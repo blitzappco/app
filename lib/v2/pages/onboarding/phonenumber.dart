@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:transitway/v2/pages/onboarding/otp.dart';
+import './otp.dart';
 import '../../pages/onboarding/onboarding.dart';
 import '../../components/onboarding/textfield.dart';
 import '../../providers/account_provider.dart';

@@ -20,7 +20,7 @@ class PlaceItem extends StatelessWidget {
           children: [
             Container(
               decoration: const BoxDecoration(
-                  shape: BoxShape.circle, color: transitwayPurple),
+                  shape: BoxShape.circle, color: blitzPurple),
               child: const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Icon(

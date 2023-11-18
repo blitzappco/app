@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../..//utils/env.dart';
-import 'package:transitway/v2/components/modals/confirm_ticket.dart';
+import './confirm_ticket.dart';
 import '../../providers/account_provider.dart';
 import '../../providers/route_provider.dart';
 

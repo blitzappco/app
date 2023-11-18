@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
-import 'package:transitway/v2/maps/map_controller.dart';
+import '../../maps/map_controller.dart';
 
+import '../../maps/place.dart';
 import '../../providers/account_provider.dart';
 import '../../providers/route_provider.dart';
 import '../../utils/env.dart';
@@ -79,6 +80,9 @@ class _RoutePreviewModalState extends State<RoutePreviewModal> {
                                   route.initFrom();
                                   setCamera(widget.mapController,
                                       LatLng(route.from.lat, route.from.long));
+
+                                  route.selectFrom(
+                                      Place(name: '', address: '', type: ''));
                                 },
                                 child: const Padding(
                                   padding: EdgeInsets.all(3.0),

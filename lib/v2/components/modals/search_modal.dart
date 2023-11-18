@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:transitway/v2/components/places/predictions.dart';
+import '../../components/places/predictions.dart';
 import '../../providers/route_provider.dart';
 import '../../providers/trips_provider.dart';
 import '../../utils/env.dart';

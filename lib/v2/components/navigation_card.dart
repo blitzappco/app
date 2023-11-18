@@ -180,7 +180,7 @@ class NavigationCard extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 20.0, top: 5),
                   child: Container(
                     decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color: transitwayPurple),
+                        shape: BoxShape.circle, color: blitzPurple),
                     child: const Padding(
                       padding: EdgeInsets.all(10.0),
                       child: Icon(

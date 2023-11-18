@@ -1,4 +1,4 @@
-package com.example.transitway
+package com.example.blitz
 
 import io.flutter.embedding.android.FlutterActivity
 

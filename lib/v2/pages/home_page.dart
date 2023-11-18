@@ -102,11 +102,6 @@ class _HomePageState extends State<HomePage> {
                   },
                   markers: <Marker>{
                     Marker(
-                        markerId: const MarkerId('user_location'),
-                        position: LatLng(route.position?.latitude ?? 0.0,
-                            route.position?.longitude ?? 0.0),
-                        icon: BitmapDescriptor.defaultMarker),
-                    Marker(
                         markerId: const MarkerId('to'),
                         position: LatLng(route.to.lat, route.to.long),
                         icon: BitmapDescriptor.defaultMarker)

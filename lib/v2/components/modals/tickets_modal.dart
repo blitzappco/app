@@ -1,6 +1,6 @@
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
-import 'package:transitway/v2/components/ticket_item.dart';
+import '../../components/ticket_item.dart';
 import '../../providers/balance_provider.dart';
 import '../../providers/account_provider.dart';
 import '../../providers/tickets_provider.dart';

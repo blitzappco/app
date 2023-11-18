@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:transitway/v2/components/modals/carbon_footprint.dart';
+import './components/modals/carbon_footprint.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({super.key});
