@@ -108,18 +108,22 @@ class _WeatherState extends State<Weather> {
                     )
                   ],
                 )
-              : const Row(
-                  children: [
-                    Icon(Icons.cloud, size: 20),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      "15°",
-                      style:
-                          TextStyle(fontFamily: 'UberMoveMedium', fontSize: 15),
-                    ),
-                  ],
+              : ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 50),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.cloud, size: 20),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "15°",
+                        style: TextStyle(
+                            fontFamily: 'UberMoveMedium', fontSize: 15),
+                      ),
+                    ],
+                  ),
                 ),
         ),
       ),

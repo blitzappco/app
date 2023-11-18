@@ -23,6 +23,7 @@ class _HomeComponentState extends State<HomeComponent> {
       bottom: 0,
       child: Consumer<TripsProvider>(builder: (context, trips, _) {
         return Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             const Weather(),
             Padding(
@@ -66,7 +67,7 @@ class _HomeComponentState extends State<HomeComponent> {
                     ),
                     if (trips.trips.isNotEmpty)
                       Recents(
-                          max: 1,
+                          max: 3,
                           type: "to",
                           callback: () async {
                             // print('debug: closed');
