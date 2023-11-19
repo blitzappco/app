@@ -8,6 +8,7 @@ import '../../providers/account_provider.dart';
 import '../../providers/route_provider.dart';
 import '../../utils/env.dart';
 
+import '../../utils/shorten.dart';
 import '../route_preview_card.dart';
 import 'search_modal.dart';
 
@@ -131,7 +132,7 @@ class _RoutePreviewModalState extends State<RoutePreviewModal> {
                                         width: 10,
                                       ),
                                       Text(
-                                        route.from.name,
+                                        shorten(route.from.name, 40),
                                         style: const TextStyle(
                                           fontSize: 17,
                                           fontFamily: 'UberMoveMedium',
@@ -177,7 +178,7 @@ class _RoutePreviewModalState extends State<RoutePreviewModal> {
                                         width: 10,
                                       ),
                                       Text(
-                                        route.to.name,
+                                        shorten(route.to.name, 30),
                                         style: const TextStyle(
                                           fontSize: 17,
                                           fontFamily: 'UberMoveMedium',

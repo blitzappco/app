@@ -44,13 +44,14 @@ class _RouteModalState extends State<RouteModal> {
   @override
   Widget build(BuildContext context) {
     Geolocator.getPositionStream().listen((Position position) async {
-      setNavMode(
-        widget.mapController,
-        LatLng(position.latitude, position.longitude),
-        position.heading,
-      );
-
       final route = Provider.of<RouteProvider>(context, listen: false);
+      if (route.page == 'route') {
+        setNavMode(
+          widget.mapController,
+          LatLng(position.latitude, position.longitude),
+          position.heading,
+        );
+      }
       route.setPosition(position);
     });
 
