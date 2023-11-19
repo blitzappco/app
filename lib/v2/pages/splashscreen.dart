@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 
-// import '../maps/place.dart';
+import '../maps/place.dart';
 import 'home_page.dart';
 import '../pages/onboarding/onboarding.dart';
 
@@ -44,11 +44,11 @@ class _SplashScreenState extends State<SplashScreen> {
         final account = Provider.of<AccountProvider>(context, listen: false);
         final trips = Provider.of<TripsProvider>(context, listen: false);
 
-        await route.initFrom();
-        // route.selectFrom(Place(
-        //     name: 'United Business Center 0',
-        //     address: 'Timisoara',
-        //     type: 'comm'));
+        // await route.initFrom();
+        route.selectFrom(Place(
+            name: 'United Business Center 0',
+            address: 'Timisoara',
+            type: 'comm'));
         await account.loadAccount();
 
         if (account.token == '' || account.account.id == '') {
