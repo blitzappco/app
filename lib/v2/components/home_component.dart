@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 
 import '../components/weather.dart';
+import '../maps/map_controller.dart';
+import '../providers/route_provider.dart';
 import '../providers/trips_provider.dart';
 import 'modals/profile_modal.dart';
 import 'places/recents.dart';
 import 'static_searchbar.dart';
 
 class HomeComponent extends StatefulWidget {
-  const HomeComponent({super.key});
+  final GoogleMapController mapController;
+  const HomeComponent({required this.mapController, super.key});
 
   @override
   State<HomeComponent> createState() => _HomeComponentState();
@@ -17,6 +22,18 @@ class HomeComponent extends StatefulWidget {
 class _HomeComponentState extends State<HomeComponent> {
   @override
   Widget build(BuildContext context) {
+    Geolocator.getPositionStream().listen((Position position) async {
+      final route = Provider.of<RouteProvider>(context, listen: false);
+      if (route.page == 'home') {
+        setNavMode(
+          widget.mapController,
+          LatLng(position.latitude, position.longitude),
+          position.heading,
+        );
+      }
+      await route.setPosition(position);
+      // await route.updateFrom(position.latitude, position.longitude);
+    });
     return Positioned(
       right: 0,
       left: 0,
@@ -66,12 +83,7 @@ class _HomeComponentState extends State<HomeComponent> {
                       ],
                     ),
                     if (trips.trips.isNotEmpty)
-                      Recents(
-                          max: 3,
-                          type: "to",
-                          callback: () async {
-                            // print('debug: closed');
-                          }),
+                      Recents(max: 3, type: "to", callback: () async {}),
                   ]),
                 ),
               ),

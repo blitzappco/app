@@ -49,7 +49,6 @@ class _WeatherState extends State<Weather> {
 
       final code = json['weather'][0]['id'];
       // final code = 781;
-      print('debug: ${json['main']['temp']}');
 
       if (badConditions.contains(code)) {
         setState(() {
@@ -64,8 +63,6 @@ class _WeatherState extends State<Weather> {
 
         loaded = true;
       });
-
-      print('debug: $temp');
     });
   }
 

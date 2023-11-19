@@ -106,7 +106,7 @@ class RouteProvider with ChangeNotifier {
 
   // List<RouteOption> routeOptionsList = [];
 
-  String page = 'home';
+  String page = '';
   List<double> mapPadding = [0, 100, 200, 250];
 
   changePage(String newPage) {
@@ -289,7 +289,6 @@ class RouteProvider with ChangeNotifier {
   buyTicket(
     String token,
   ) async {
-    print('debug: $selectedTicketType');
     loading = true;
     notifyListeners();
 
@@ -341,6 +340,16 @@ class RouteProvider with ChangeNotifier {
     final wp = await waypointFromCoordinates(
       pos?.latitude ?? 0.0,
       pos?.longitude ?? 0.0,
+    );
+
+    from = wp;
+    notifyListeners();
+  }
+
+  updateFrom(double lat, double long) async {
+    final wp = await waypointFromCoordinates(
+      lat,
+      long,
     );
 
     from = wp;

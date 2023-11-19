@@ -132,7 +132,7 @@ class _RoutePreviewModalState extends State<RoutePreviewModal> {
                                         width: 10,
                                       ),
                                       Text(
-                                        shorten(route.from.name, 40),
+                                        shorten(route.from.name, 30),
                                         style: const TextStyle(
                                           fontSize: 17,
                                           fontFamily: 'UberMoveMedium',

@@ -92,12 +92,14 @@ class _HomePageState extends State<HomePage> {
                   myLocationEnabled: true,
                   myLocationButtonEnabled: false,
                   mapToolbarEnabled: false,
-                  onMapCreated: (GoogleMapController controller) {
+                  onMapCreated: (GoogleMapController controller) async {
                     _controller.complete(controller);
                     mapController = controller;
 
-                    // setCamera(
-                    //     mapController, LatLng(route.from.lat, route.from.long));
+                    final route =
+                        Provider.of<RouteProvider>(context, listen: false);
+                    await route.changePage('home');
+
                     setCameraLocation(mapController);
                   },
                   markers: <Marker>{
@@ -113,7 +115,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 if (route.loading) const Loading(),
                 if (route.page == 'home' && !route.loading)
-                  const HomeComponent(),
+                  HomeComponent(
+                    mapController: mapController,
+                  ),
                 if (route.page == 'preview' && !route.loading)
                   RoutePreviewModal(
                     mapController: mapController,
